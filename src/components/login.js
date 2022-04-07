@@ -7,8 +7,8 @@ const Login = () => {
                 <div className="login-div">
                     <form className="login-form">
                         <h1>Log in</h1>
-                        <input type="username" name="username" classname="username" placeholder="username" />
-                        <input type="password" name="password" classname="password" placeholder="password" />
+                        <input type="username" name="username" className="username" placeholder="username" />
+                        <input type="password" name="password" className="password" placeholder="password" />
                         <input type="button" className="login-button" value="Log in" />
 
                     </form>

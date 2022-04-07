@@ -91,3 +91,23 @@ input {
   left: 40%;
  
 }
+
+.header {
+  background-color: #966199;
+  height: 5vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  /* padding-right: 30px; */
+}
+
+a {
+  color: white;
+  font-size: 1.3em;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
