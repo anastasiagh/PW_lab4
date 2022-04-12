@@ -1,11 +1,13 @@
 import React, { Component, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login(){
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [error, setError] = useState('');
+
+    let navigate = useNavigate();
 
     // const navigate = useHistory();
     const submitHandler = (e) => {
@@ -21,8 +23,8 @@ function Login(){
             console.log(res.data.id)
             postData.data.id = res.data.id
             localStorage.setItem("user-info", JSON.stringify(postData["data"]))
-            alert("User added")
-            // navigate("/quizes")
+            // alert("User added") 
+            navigate('/main')
         })
         .catch((err)=>{
             console.log(err)
