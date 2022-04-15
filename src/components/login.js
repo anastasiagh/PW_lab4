@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login(){
@@ -8,9 +8,10 @@ function Login(){
     const [error, setError] = useState('');
 
     let navigate = useNavigate();
-
-    // const navigate = useHistory();
     const submitHandler = (e) => {
+        if (name == '' || surname == '') {
+            setError('Fill the fields')
+        } else {
         e.preventDefault();
         const postData = {data : {name, surname}}
 
@@ -23,16 +24,14 @@ function Login(){
             console.log(res.data.id)
             postData.data.id = res.data.id
             localStorage.setItem("user-info", JSON.stringify(postData["data"]))
-            // alert("User added") 
             navigate('/main')
         })
         .catch((err)=>{
             console.log(err)
-            // setError('User already exists!');
-            alert("already exists")
+            setError('User already exists!');
             
         })
-        
+    }
     }
 
     return (
@@ -45,6 +44,7 @@ function Login(){
                     <input type="text" name="surname" className="surname" placeholder="surname" 
                         value={surname} onChange={(e)=>setSurname(e.target.value)}/>
                     <input type="password" name="password" className="password" placeholder="password" />
+                    {error && <div className="text-danger">{error}</div>}
                     <input type="submit" className="login-button" value="Log in" />
 
                 </form>

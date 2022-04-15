@@ -3,7 +3,7 @@ body, * {
 }
 .main {
   /* background-image: url(./assets/img/Frame.png); */
-  background-color: #FFE4C0;
+  background-color: rgb(255, 245, 230);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 45vw;
@@ -14,16 +14,22 @@ body, * {
   align-items: center;
 }
 
+.mainQuizes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .quizes-here {
   display: flex;
   flex-direction: row;
- 
+  flex-wrap: wrap;
 }
 
 .quiz {
-  margin: 20px 100px;
-  background: #ffbbbb3e;
+  margin: 20px 60px;
+  background: #f7dbdb3e;
   color: black;
   padding: 15px;
   border: 1px solid #ffbbbb3e;
@@ -31,28 +37,24 @@ body, * {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 20vw;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .start-quiz {
-  border: 1px solid #966199;
-  border-radius: 10px;
+  border: 1px solid #fccbcb;
+  border-radius: 7px;
   color: white;
-  background-color: #966199;
+  background-color: #fccbcb;
   height: 2vw;
   width: 6vw;
   font-size: 1.1vw;
   bottom: 5vw;
   cursor: pointer; 
-  
+  font-weight: bold;
 }
 
-.start-quiz:hover {
-  background-color: #ffbbbb3e;
-  color: #966199;
-  border: 1px solid #ffbbbb3e;
-}
 
 .login-form{
   display: flex;
@@ -62,9 +64,9 @@ body, * {
   justify-content: center;
   height: 100%;
   gap: 20px;
-  background-color: #966199cf;
+  background-color: rgb(190, 90, 90);
   width: 25vw;
-  border: 1px #966199cf;
+  border: 1px rgb(190, 90, 90);
   border-radius: 20px;
   color: white;
 }
@@ -80,8 +82,10 @@ input {
 .login-button {
   width: 7vw;
   cursor: pointer; 
-  border: 1px #FFE4C0 !important;
-
+  border: 1px rgb(255, 245, 230) !important;
+  font-weight: bold; 
+  font-size: 1em; 
+  color: rgb(190, 90, 90);
 }
 
 .login-div {
@@ -93,7 +97,7 @@ input {
 }
 
 .header {
-  background-color: #966199;
+  background-color: rgb(190, 90, 90);
   height: 5vw;
   display: flex;
   flex-direction: row;
@@ -120,9 +124,9 @@ a {
   gap: 10px;
   justify-content: center;
   height: 15vw;
-  background-color: #966199cf;
+  background-color: rgb(190, 90, 90);
   width: 20vw;
-  border: 1px #966199cf;
+  border: 1px rgb(190, 90, 90);
   border-radius: 20px;
   color: white;
   position: absolute;
@@ -135,12 +139,12 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 20px;
-  justify-content: center;
+  /* justify-content: center; */
   height: auto;
-  padding: 20px;
-  background-color: #966199cf;
+  padding: 30px;
+  background-color: rgb(190, 90, 90);
   width: auto;
-  border: 1px #966199cf;
+  border: 1px rgb(190, 90, 90);
   border-radius: 20px;
   color: white;
   position: absolute;
@@ -151,23 +155,36 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
+  /* padding-left: -20px; */
 }
 
 input[type=radio]{
   height: 20px;
+  width: 3vw !important
 }
 
 .link {
-  border: 1px solid #966199;
+  border: 1px solid rgb(190, 90, 90);
   /* border-radius: 10px; */
   color: white;
-  background-color: #966199;
+  background-color: rgb(190, 90, 90);
   height: auto;
   width: auto;
   font-size: 1.3em;
   font-weight: bold;
   /* bottom: 5vw; */
   cursor: pointer; 
+}
+
+.main-name {
+  padding-top: 20px;
+}
+
+.title {
+  font-weight: bold;
+  color: rgb(238, 152, 152);
+}
+
+.titlee {
+  color: rgb(190, 90, 90);
 }

@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {useNavigate} from 'react-router-dom';
 
 function UserCheck(props){
-    // console.log(props)
     let Comp = props.Comp
     const navigate = useNavigate();
     console.log(localStorage.getItem('user-info'))

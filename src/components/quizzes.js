@@ -1,5 +1,4 @@
 import React, { Component, useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
 import ViewQuizes from './viewQuizes';
 import axios from 'axios';
 

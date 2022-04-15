@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Main from './mainPage';
 import Header from './header';
-import { Switch, Route, Redirect, withRouter, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './login';
 import Quiz from './quiz';
 import Quizes from './quizzes';
@@ -12,9 +12,7 @@ class MainComponent extends Component {
         return (
             <div>
                 <Header />
-                {/* <Login /> */}
                 <Routes>
-                    {/* <Navigate path="/login" element={< UserCheck Cmp={Login} />} /> */}
                     <Route path="/main" element={<UserCheck  Comp={Main} />} />
                     <Route path="/login" element={< UserCheck Comp={Login} />} />
                     <Route exact path="/quizzes" element={<UserCheck Comp={Quizes}/>} />
@@ -25,7 +23,7 @@ class MainComponent extends Component {
         );
     }
 }
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+
 export default MainComponent;
 
 

@@ -4,10 +4,10 @@ import axios from 'axios';
 
 const FinishQuiz = ({results, data, time}) => {
     const [userId, setUserId] = useState(JSON.parse(localStorage.getItem('user-info')).id);
-    const [response, setResponse] = useState([]);
+    const [setResponse] = useState([]);
     const [score, setScore] = useState(0);
     const quizId = useParams().id;
-    const [loading, setLoading] = useState(false);
+    const [setLoading] = useState(false);
 
 
     const navigate = useNavigate();
