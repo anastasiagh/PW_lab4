@@ -111,3 +111,50 @@ a {
   font-weight: bold;
   
 }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  height: 10vw;
+  background-color: #966199cf;
+  width: 13vw;
+  border: 1px #966199cf;
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  top: 25%;
+}
+
+.pass-quiz-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  height: auto;
+  padding: 20px;
+  background-color: #966199cf;
+  width: auto;
+  border: 1px #966199cf;
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  top: 25%;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+input[type=radio]{
+  height: 20px;
+}
