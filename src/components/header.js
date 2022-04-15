@@ -1,22 +1,46 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-class Header extends Component {
-    render() {
+function Header()  {
+    localStorage.clear();
+    let user = JSON.parse(localStorage.getItem('user-info'))
+    
         return (
             <div className="header">
-                <NavLink className="nav-link" to="/main">
-                Main
-                </NavLink>
-                <NavLink className="nav-link" to="/about">
-                About
-                </NavLink>
-                <NavLink className="nav-link" to="/login">
-                Log in
-                </NavLink>
+                
+                {
+                    localStorage.getItem('user-info') ?
+                    <>
+                    <NavLink className="nav-link" to="/main">
+                    Main
+                    </NavLink>
+                    
+                   </>
+                    :
+                    <>
+                    <NavLink className="nav-link" to="/login">
+                    Log in
+                    </NavLink>
+                    {/* <NavLink className="nav-link" to="/main">
+                    {user.name} {user.surname}
+                    </NavLink> */}
+                    </>
+                }
+                
+                
+                {
+                    localStorage.getItem('user-info') ?
+                    <>
+                    <NavLink className="nav-link" to="/main">
+                    {user.name} {user.surname}
+                    </NavLink>
+                    </>
+                    :null
+                }
+            
             </div>
         )
-    }
+    
 }
 
 export default Header;

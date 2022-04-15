@@ -17,7 +17,7 @@ body, * {
 
 .quizes-here {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
  
 }
 
@@ -119,9 +119,9 @@ a {
   align-items: center;
   gap: 10px;
   justify-content: center;
-  height: 10vw;
+  height: 15vw;
   background-color: #966199cf;
-  width: 13vw;
+  width: 20vw;
   border: 1px #966199cf;
   border-radius: 20px;
   color: white;
