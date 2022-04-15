@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Audio from './audio';
+
 
 function Header()  {
     localStorage.clear();
@@ -7,10 +9,11 @@ function Header()  {
     
         return (
             <div className="header">
-                
+                <Audio />
                 {
                     localStorage.getItem('user-info') ?
                     <>
+                    
                     <NavLink className="nav-link" to="/main">
                     Main
                     </NavLink>
