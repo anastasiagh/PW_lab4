@@ -7,8 +7,7 @@ class musicPlayer extends Component {
             play: false,
             pause: true,
         }
-        // this.url = "http://docs.google.com/uc?export=open&id=1vqNrCLWfOPmQeMcpCo05yTZKPQf7I10G";
-        this.url = "https://soundcloud.com/r3hab/the-chainsmokers-coldplay-something-just-like-this-r3hab-remix?in=ilyanaazman/sets/bestofchillnation&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
+        this.url = "";
         this.audio = new Audio(this.url);
 
     }
