@@ -18,7 +18,7 @@ export default function MainComponent() {
         <Route path="/main" element={<UserCheck Comp={Main} />} />
         <Route path="/login" element={<UserCheck Comp={Login} />} />
         <Route exact path="/quizzes" element={<UserCheck Comp={Quizes} />} />
-        <Route path="/quizzes/:quizId" element={<UserCheck Comp={Quiz }  />} />
+        <Route path="/quizzes/:quizId" element={<UserCheck Comp={Quiz  }  />} />
       </Routes>
     </div>
   );

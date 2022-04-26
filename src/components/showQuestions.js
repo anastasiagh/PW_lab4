@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 function ShowQuestions(props) {
@@ -11,7 +11,7 @@ function ShowQuestions(props) {
   const [correctAnswer, setCorrectAnswer] = useState();
   const [result, setResult] = useState(0);
   const [isOver, setIsOver] = useState(false);
-  // const {quizId} = useParams();
+  const {quizId} = useParams();
 
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function ShowQuestions(props) {
 
     axios
       .post(
-        `https://pure-caverns-82881.herokuapp.com/api/v54/quizzes/submit`,
+        `https://pure-caverns-82881.herokuapp.com/api/v54/quizzes/${quizId}/submit`,
         postData,
         {
           headers: {
