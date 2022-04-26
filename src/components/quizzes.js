@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { Route, Routes } from "react-router-dom";
-
 
 function Quizes() {
     const [quizzes, setQuizzes] = useState([]);
@@ -40,7 +38,7 @@ function Quizes() {
                             <p className="title">Title: {quiz.title}</p>
                             <p className="title">Question count: {quiz.questions_count}</p>
                             
-                            <input type="button" className="start-quiz" value="Start quiz" onClick = {() => alert('hey')} />
+                            <input type="button" className="start-quiz" value="Start quiz" />
                         </div>
                          </Link>
                          

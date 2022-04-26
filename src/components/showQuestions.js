@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import "../App.css"
 
 function ShowQuestions(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState();
-  const [correctAnswer, setCorrectAnswer] = useState();
   const [result, setResult] = useState(0);
   const [isOver, setIsOver] = useState(false);
-  const {quizId} = useParams();
-
+  const { quizId } = useParams();
 
   useEffect(() => {
     console.log(props.questions);
@@ -55,11 +53,6 @@ function ShowQuestions(props) {
       )
       .then(function (res) {
         if (res.data.correct) setResult((prevState) => prevState + 1);
-
-        // if (currentQuestion + 1 < quiz.questions.length) {setCurrentQuestion((prevState) => prevState + 1)}
-        // else setSubmited(true);
-
-        // console.log(result);
       })
       .catch(function (error) {
         console.log(error);
@@ -69,7 +62,7 @@ function ShowQuestions(props) {
     if (currentIndex === props?.questions.length - 1) {
       setIsOver(true);
       // alert(`Your score is ${result}`)
-      console.log(result)
+      console.log(result);
     } else {
       setCurrentIndex((prev) => prev + 1);
     }
@@ -79,28 +72,44 @@ function ShowQuestions(props) {
     <div>
       {isOver ? (
         <>
-          <p>Quiz finished</p>
-          <p>Yor result is {result} out of {props?.questions.length} </p>
-          <button component={Link } to = "/main"> fuck you</button>
+          <div className="main">
+            <div className="card-body">
+              <h3 className="card-title">Yor result</h3>
+              <h2 className="card-subtitle">
+                {result} out of {props?.questions.length}{" "}
+              </h2>
+              <Link to={`/main`}>
+              <button className="start-quiz">
+                Return
+              </button>
+              </Link>
+            </div>
+          </div>
         </>
       ) : (
         <>
-          <div>{props?.questions[currentIndex]?.question}</div>
-          <div className="answers ">
-            {props?.questions[currentIndex]?.answers.map((answer, index) => (
-              <div className="question-answers" key={index}>
-                <input
-                  type="radio"
-                  name={props.questions[currentIndex].question}
-                  value={answer}
-                  onClick={(event) => handleAnswers(event)}
-                />
-                <label htmlFor={answer}>{answer}</label>
+          <div className="main">
+            <div className="pass-quiz-card">
+              {props?.questions[currentIndex]?.question}
+              <div className="answers ">
+                {props?.questions[currentIndex]?.answers.map(
+                  (answer, index) => (
+                    <div className="question-answers" key={index}>
+                      <input
+                        type="radio"
+                        name={props.questions[currentIndex].question}
+                        value={answer}
+                        onClick={(event) => handleAnswers(event)}
+                      />
+                      <label htmlFor={answer}>{answer}</label>
+                    </div>
+                  )
+                )}
+                <button className="start-quiz" onClick={() => nextQuestion()}>
+                  Next 
+                </button>
               </div>
-            ))}
-            <button onClick={() => nextQuestion()}>
-              Next chestion {result}
-            </button>
+            </div>
           </div>
         </>
       )}

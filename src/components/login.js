@@ -15,7 +15,6 @@ function Login(){
         } else {
         e.preventDefault();
         const postData = {data : {name, surname}}
-        // for (var i=0; i<=10000; i++) {
         axios.post('https://pure-caverns-82881.herokuapp.com/api/v54/users', postData,  
         {headers:{
                         "X-Access-Token": process.env.REACT_APP_ACCESS_TOKEN,
@@ -35,7 +34,6 @@ function Login(){
             setError('User already exists!');
             
         })
-    // }
     }
     }
 
@@ -49,7 +47,6 @@ function Login(){
                     <input type="text" name="surname" className="surname" placeholder="surname" 
                         value={surname} onChange={(e)=>setSurname(e.target.value)}/>
                     <input type="password" name="password" className="password" placeholder="password" />
-                    {/* {error && <div className="text-danger">{error}</div>} */}
                     <input type="submit" className="login-button" value="Log in" />
 
                 </form>

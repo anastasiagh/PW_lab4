@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ShowQuestions from "./showQuestions";
-import { withRouter } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 
@@ -13,8 +12,7 @@ export class Quiz extends Component {
     
   constructor(props) {
     super(props);
-    // this.quizId = props.match.params.quizId;
-    this.state = {
+      this.state = {
       questions: [],
       currentIndex: 0,
     };
