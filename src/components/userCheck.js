@@ -5,8 +5,10 @@ function UserCheck(props){
     let Comp = props.Comp
     const navigate = useNavigate();
     console.log(localStorage.getItem('user-info'))
+    const qId = props.qId
 
     useEffect(() => {
+        console.log(props.qId)
         if(!localStorage.getItem('user-info'))
         {
             navigate("/login")  
@@ -14,7 +16,7 @@ function UserCheck(props){
     }, []) 
     return(
         <div>
-            <Comp/>
+            <Comp qId = {qId} />
         </div>
     );
 }

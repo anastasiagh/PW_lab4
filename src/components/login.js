@@ -6,6 +6,7 @@ function Login(){
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [error, setError] = useState('');
+    const [userId, setUserId] = useState(0)
 
     let navigate = useNavigate();
     const submitHandler = (e) => {
@@ -14,23 +15,27 @@ function Login(){
         } else {
         e.preventDefault();
         const postData = {data : {name, surname}}
-
+        // for (var i=0; i<=10000; i++) {
         axios.post('https://pure-caverns-82881.herokuapp.com/api/v54/users', postData,  
         {headers:{
-                        "X-Access-Token": 'baa5c43c80801b026c9113061d49a2616ada5c5254c3b380fee6523d7c23c37f',
+                        "X-Access-Token": process.env.REACT_APP_ACCESS_TOKEN,
                     }
                 })
         .then((res) => {
             console.log(res.data.id)
             postData.data.id = res.data.id
-            localStorage.setItem("user-info", JSON.stringify(postData["data"]))
+            setUserId(res.data.id)
+
+            localStorage.setItem("user-info", res.data.id);
             navigate('/main')
+            
         })
         .catch((err)=>{
             console.log(err)
             setError('User already exists!');
             
         })
+    // }
     }
     }
 
@@ -44,7 +49,7 @@ function Login(){
                     <input type="text" name="surname" className="surname" placeholder="surname" 
                         value={surname} onChange={(e)=>setSurname(e.target.value)}/>
                     <input type="password" name="password" className="password" placeholder="password" />
-                    {error && <div className="text-danger">{error}</div>}
+                    {/* {error && <div className="text-danger">{error}</div>} */}
                     <input type="submit" className="login-button" value="Log in" />
 
                 </form>

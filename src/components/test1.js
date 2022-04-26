@@ -1,24 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ShowQuestions from "./showQuestions";
-// import { useParams } from "react-router-dom";
 
-export class Quiz extends Component {
-    
+export class test1 extends Component {
   constructor(props) {
     super(props);
-    // this.quizId = props.match.params.quizId;
     this.state = {
       questions: [],
       currentIndex: 0
     };
-  };
-
+  }
 
   componentDidMount() {
-      console.log(this.props.qId)
     axios
-      .get(`https://pure-caverns-82881.herokuapp.com/api/v54/quizzes/{this.props.qId}`, {
+      .get(`https://pure-caverns-82881.herokuapp.com/api/v54/quizzes/392`, {
         headers: { "X-Access-Token": process.env.REACT_APP_ACCESS_TOKEN },
       })
       .then((res) => {
@@ -43,4 +38,4 @@ export class Quiz extends Component {
   }
 }
 
-export default Quiz;
+export default test1;

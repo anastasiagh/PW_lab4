@@ -23,7 +23,7 @@ const FinishQuiz = ({results, data, time}) => {
 
         axios.post('https://pure-caverns-82881.herokuapp.com/api/v54/quizzes/'+ quizId +'/submit', postData,  
         {headers:{
-                        "X-Access-Token": 'baa5c43c80801b026c9113061d49a2616ada5c5254c3b380fee6523d7c23c37f',
+                        "X-Access-Token": process.env.REACT_APP_ACCESS_TOKEN,
                     }
                 })
         .then((res) => {
